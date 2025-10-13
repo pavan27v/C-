@@ -1,0 +1,31 @@
+/******************************************************************************
+
+Even though a initialized before b, b will be initialized first due to declaration order
+
+*******************************************************************************/
+#include<iostream>
+#include<math.h>
+#include<stdint.h>
+using namespace std;
+class ordertest
+{
+  int32_t a;
+  int32_t b;
+  
+   public :
+   //ordertest (int x , int y) : a(x), b(y) {}
+   
+   ordertest (int x , int y) : b(y), a(x) {}
+    void print()
+    {
+        cout<<"this->a ="<<this->a<<"\nthis->b ="<<this->b<<endl;
+    }
+    
+};
+
+int main()
+{
+    ordertest obj(12,13);
+    obj.print();
+    
+}
