@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+class RefMember {
+    int& ref;
+public:
+    RefMember(int& r) : ref(r) {
+        cout << "Reference initialized to " << ref << endl;
+    }
+
+    void modify(int val) {
+        ref = val;
+    }
+};
+
+int main() {
+    int a = 5;
+    RefMember obj(a);
+    obj.modify(20);
+    cout << "a after modification: " << a << endl;
+    return 0;
+}
