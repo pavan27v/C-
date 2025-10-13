@@ -1,0 +1,45 @@
+******************************************************************************
+
+1) Basic initalizer list : primitive type
+Compare the initalizer list va assigment 
+
+constant members 
+const = immutable
+C++ enforces immutability at compile time
+You must give const members a value at construction time, not after
+Assignment happens too late......
+
+*******************************************************************************/
+#include<iostream>
+#include<math.h>
+#include<stdint.h>
+using namespace std;
+
+class constmember 
+{
+         const int32_t x;
+          int32_t y;
+	
+	public:
+	 constmember(int32_t value) : x(value) {}
+	 //constmember() {}
+	 constmember(int32_t b, int32_t a) : x(b)  
+	 {
+	     //this->x = b;  error: assignment of read-only member ‘constmember::x’
+	     this->y = a;
+	 }
+	 
+	 
+	 void print()
+	 {
+	   cout<<"this->x = " << this->x <<"this->y "<< this->y <<endl;
+	 }
+};
+
+int main()
+{
+    constmember obj(90),obj1(9, 10);
+    obj.print();
+    obj1.print();
+
+}
