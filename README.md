@@ -51,7 +51,8 @@ If no constructor is written, the compiler provides a default one.
 Constructors cannot be virtual.
 10. Can’t return anything
   Constructors do not have a return type — not even void.
-11. Destructors are its opposite
+11. constructors are used to create the temporary objects 
+12. Destructors are its opposite
 While constructors initialize, destructors clean up
  ~MyClass();  // Destructor
 
