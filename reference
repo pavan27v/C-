@@ -1,0 +1,19 @@
+#include <iostream>
+#include <string>
+
+void printNonConst(std::string &s) { // Only accepts lvalues
+    std::cout << s << std::endl;
+}
+
+void printConst(const std::string &s) { // Accepts lvalues and rvalues
+    std::cout << s << std::endl;
+}
+
+int main() {
+    std::string lvalue = "Hello";
+    printNonConst(lvalue); // OK
+    // printNonConst("World"); // ERROR: cannot bind to rvalue
+
+    printConst(lvalue); // OK
+    printConst("World"); // OK: binds to temporary
+}
