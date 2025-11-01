@@ -1,0 +1,40 @@
+#include <stdio.h>
+#include <iostream>
+#include <string>
+using namespace std;
+class Example
+{
+  int value ;
+  
+  
+  public :
+  Example(int v = 0) : value(v) { }
+  // Arithmetic operator
+  
+ Example operator +(const Example & rhs)  { return Example(value +  rhs.value); }
+ Example operator -(const Example & rhs) { return Example(value - rhs.value); }
+ Example operator *(const Example & rhs) { return Example(value * rhs.value); }
+ Example operator /(const Example & rhs) { return Example(value / rhs. value); }
+ Example operator % (const Example & rhs) { return Example(value % rhs.value); }
+
+
+  void disp()
+  {
+      cout <<"value" <<value ;
+  }
+};
+
+int main()
+{
+    Example obj1(10), obj2(20);
+    
+    //obj1 += obj2 ;
+    
+    //obj1 = obj1 + obj2 ;
+    //obj1 = obj1 - obj2 ;
+    //obj1 = obj1 * obj2 ;
+    // obj1 = obj1 % obj2;
+    //obj1.disp();
+    
+    return 0;
+}
