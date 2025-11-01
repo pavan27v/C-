@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <iostream>
+#include <string>
+using namespace std;
+class Example
+{
+  int value ;
+ 
+ 
+  public :
+  Example(int v = 0) : value(v) { }
+  
+   bool operator==(const Example &rhs ) 
+   { 
+      
+       return (value == rhs.value);
+       
+   }
+   bool operator!=(const Example &rhs)
+   {
+       return (value != rhs.value);
+   }
+   bool operator<(const Example &rhs)
+   {
+       
+       return (value < rhs.value);
+   }
+   bool operator>(const Example &rhs)
+   {
+       return (value > rhs.value);
+   }
+   bool operator<=(const Example &rhs)
+   {
+       return (value <= rhs.value);
+   }
+   bool operator>=(const Example &rhs)
+   {
+       return (value >= rhs.value);
+   }
+   bool operator !()
+   {
+       return ( !value);
+   }
+   bool operator && ( const Example &rhs) 
+   {
+       return ( value && rhs.value);
+       
+   }
+   bool operator || (const Example &rhs) 
+   {
+       return (value || rhs.value);
+   }
+   
+   
+   
+  void disp()
+  {
+      cout <<"value" <<value ;
+  }
+  
+};
+
+int main()
+{
+    Example obj1(0), obj2(0);
+    
+    /*if( !obj1 )
+        cout<<"Zero value"<<endl;
+    else
+       cout <<" Non-zero value" <<endl; */
+    
+   /* if(obj1 && obj2)
+    cout<<"Both objects are non zero";
+    else
+    cout<<"one of the object is zero";*/
+    
+    
+    if(obj1 || obj2 )
+    cout<<"one of the object is non zero"<<endl;
+    else
+    cout<<"both the objects are zero"<<endl;
+    
+    
+    
+    
+ 
+    return 0;
+}
