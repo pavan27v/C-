@@ -1,0 +1,91 @@
+#include <stdio.h>
+#include <iostream>
+#include <string>
+using namespace std;
+class Example
+{
+  int value ;
+ 
+ 
+  public :
+  Example(int v = 0) : value(v) { }
+  
+   bool operator==(const Example &rhs ) 
+   { 
+      
+       return (value == rhs.value);
+       
+   }
+   bool operator!=(const Example &rhs)
+   {
+       return (value != rhs.value);
+   }
+   bool operator<(const Example &rhs)
+   {
+       
+       return (value < rhs.value);
+   }
+   bool operator>(const Example &rhs)
+   {
+       return (value > rhs.value);
+   }
+   bool operator<=(const Example &rhs)
+   {
+       return (value <= rhs.value);
+   }
+   bool operator>=(const Example &rhs)
+   {
+       return (value >= rhs.value);
+   }
+   
+  void disp()
+  {
+      cout <<"value" <<value ;
+  }
+  
+};
+
+int main()
+{
+    Example obj1(2000), obj2(200);
+    
+    //cout << "obj1 == obj2" << obj1 == obj2;
+   /*if (obj1 == obj2)
+   {
+       cout<<"Equal"<<endl;
+   }
+   else
+   {
+        cout<<"NOT Equal"<<endl;
+   }*/
+   
+  /* if(obj1!= obj2)
+   {
+       cout<<"True"<<endl;
+   }
+   else
+   {
+       cout<<"False"<<endl;
+   } */
+  /* if(obj1 < obj2)
+    cout <<"True" <<endl;
+    else
+    cout <<"False" <<endl; */
+    
+   /*if(obj1 > obj2)
+    cout <<"True" <<endl;
+    else
+    cout <<"False" <<endl; */
+  
+  /* if(obj1 <= obj2)
+   cout <<"True" <<endl;
+   else
+   cout <<"False"<<endl; */
+   
+    if(obj1 >= obj2)
+     cout<<"True" <<endl;
+     else
+     cout <<"false"<<endl;
+     
+    return 0;
+}
