@@ -1,0 +1,52 @@
+#include <stdio.h>
+#include <iostream>
+#include <string>
+using namespace std;
+class Example
+{
+  int value ;
+  
+  
+  public :
+  Example(int v = 0) : value(v) { }
+  // increment and decrement operator
+  //Example & operator++() { ++value; return *this; }
+  //Example & operator--() { --value; return *this; }
+  
+   Example operator++(int) 
+   { 
+       Example old ;
+       old.value = this->value;
+       (this->value)++;
+       return old;
+   }
+   Example operator--(int)
+   {
+       Example old(*this);
+       value = value - 1;
+       return(old);
+   }
+  void disp()
+  {
+      cout <<"value" <<value ;
+  }
+  
+};
+
+int main()
+{
+    Example obj1(10);
+   // ++(++obj1);
+   // --(--obj1);
+    //obj1.disp();
+    /*Example obj2 = obj1++;
+    obj2.disp();
+    cout<<endl;
+    obj1.disp();*/
+    Example obj2 = obj1--;
+    obj2.disp();
+    cout<<endl;
+    obj1.disp();
+    
+    return 0;
+}
